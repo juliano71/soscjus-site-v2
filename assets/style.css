@@ -463,3 +463,29 @@ footer .foot-row{ display:flex; justify-content:space-between; flex-wrap:wrap; g
 .navcta{ box-shadow:0 10px 26px -14px var(--accent); }
 /* headline duotone helper */
 .duo{ background:linear-gradient(100deg, var(--lime), var(--miami)); -webkit-background-clip:text; background-clip:text; color:transparent; font-style:normal; }
+
+
+/* ---------- connection diagram (novo — azul no meio, chama atenção) ---------- */
+.cx{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:16px; margin-top:28px; }
+@media (max-width:640px){ .cx{ grid-template-columns:1fr; gap:16px; } }
+.cx-node{ border:1px solid var(--hair); border-radius:20px; padding:22px 16px; text-align:center; background:rgba(255,255,255,.02); }
+.cx-node .cx-ic{ width:58px; height:58px; margin:0 auto 12px; border-radius:16px; display:flex; align-items:center; justify-content:center; }
+.cx-node .cx-ic svg{ width:31px; height:31px; }
+.cx-node.user{ border-color:rgba(114,248,76,.40); }
+.cx-node.user .cx-ic{ color:var(--lime); background:var(--lime-dim); border:1px solid rgba(114,248,76,.45); box-shadow:0 0 36px -12px var(--lime); }
+.cx-node.office{ border-color:rgba(0,169,224,.42); }
+.cx-node.office .cx-ic{ color:var(--miami); background:var(--miami-dim); border:1px solid rgba(0,169,224,.5); box-shadow:0 0 36px -12px var(--miami); }
+.cx-name{ font-family:'Space Grotesk'; font-weight:700; font-size:15px; letter-spacing:-.01em; }
+.cx-sub{ color:var(--muted); font-size:12.5px; margin-top:5px; line-height:1.4; }
+.cx-link{ position:relative; min-width:130px; display:flex; flex-direction:column; align-items:center; gap:12px; }
+@media (max-width:640px){ .cx-link{ min-width:0; width:80%; margin:0 auto; } }
+.cx-wire{ position:relative; width:100%; height:5px; border-radius:99px; background:linear-gradient(90deg, var(--lime), var(--miami)); box-shadow:0 0 22px -2px var(--miami); }
+.cx-wire::before{ content:''; position:absolute; inset:0; border-radius:99px; background:linear-gradient(90deg, transparent 0, rgba(255,255,255,.9) 50%, transparent 100%); background-size:45% 100%; background-repeat:no-repeat; animation:cxflow 1.9s linear infinite; }
+@keyframes cxflow{ 0%{ background-position:-45% 0; } 100%{ background-position:145% 0; } }
+.cx-dot{ position:absolute; top:50%; left:0; width:11px; height:11px; margin-top:-5.5px; border-radius:50%; background:var(--miami); box-shadow:0 0 16px 3px var(--miami); animation:cxtravel 1.9s linear infinite; }
+@keyframes cxtravel{ 0%{ left:0; } 100%{ left:100%; } }
+.cx-badge{ display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:600; color:var(--miami); border:1px solid rgba(0,169,224,.5); background:var(--miami-dim); padding:6px 12px; border-radius:999px; box-shadow:0 0 26px -8px var(--miami); animation:cxpulse 2.3s ease-in-out infinite; white-space:nowrap; }
+.cx-badge svg{ width:13px; height:13px; }
+@keyframes cxpulse{ 0%,100%{ box-shadow:0 0 22px -10px var(--miami); } 50%{ box-shadow:0 0 32px -3px var(--miami); } }
+/* chooser icon holds an svg now */
+.choosecard .cc-icon svg{ display:block; }
