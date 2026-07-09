@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOSC JUS — Sou Usuário</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-theme="usuario">
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand"><img src="images/logo.png" alt="SOSC JUS"> SOSC JUS</a>
+    <div class="navlinks">
+      <a href="index.html">Início</a>
+      <a href="usuario.html" class="active">Sou Usuário</a>
+      <a href="advogado.html">Sou Advogado</a>
+    </div>
+    <a href="#" class="navcta" onclick="openStore(); return false;">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a1 1 0 011 1v11.59l3.3-3.3a1 1 0 111.4 1.42l-5 5a1 1 0 01-1.4 0l-5-5a1 1 0 111.4-1.42l3.3 3.3V3a1 1 0 011-1zM5 20a1 1 0 011-1h12a1 1 0 110 2H6a1 1 0 01-1-1z"/></svg>
+      <span id="navctatext">Baixar o app</span>
+    </a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot-live"></span> Monitoramento jurídico em tempo real</div>
+        <h1>Todo dia pode nascer um processo<br>com o <em>seu</em> nome nele.</h1>
+        <p class="sub">O SOSC JUS avisa antes que vire um problema. Descubra processos que você nem sabia que existiam, consulte mandado de prisão na hora, e tenha seus advogados e contatos de confiança a um toque de distância.</p>
+        <div class="herobtns">
+          <button class="btn-primary" onclick="openStore()">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a1 1 0 011 1v11.59l3.3-3.3a1 1 0 111.4 1.42l-5 5a1 1 0 01-1.4 0l-5-5a1 1 0 111.4-1.42l3.3 3.3V3a1 1 0 011-1zM5 20a1 1 0 011-1h12a1 1 0 110 2H6a1 1 0 01-1-1z"/></svg>
+            Baixar agora
+          </button>
+          <a href="#ferramentas" class="btn-ghost">Ver ferramentas ↓</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="phone-stage">
+          <div class="phone" id="phoneSim">
+            <div class="phone-progress"></div>
+            <div class="phone-screens"></div>
+            <div class="phone-tap-hint">👆 toque pra navegar</div>
+          </div>
+        </div>
+        <p class="phone-caption" id="phoneSimCaption"></p>
+      </div>
+    </div>
+
+    <!-- signature element: live ticker -->
+    <div class="ticker-shell">
+      <div class="ticker-head"><span class="dot-live"></span> Feed ao vivo · exemplos de detecções do motor SOSC JUS</div>
+      <div class="ticker-track-wrap">
+        <div class="ticker-track" id="tickerTrack"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONEXÃO PAINEL-A-PAINEL (a inovação principal) ============ -->
+<section>
+  <div class="wrap">
+    <div class="connect-banner">
+      <div class="cb-eyebrow"><span class="dot-live"></span> A revolução: nada fica só com você</div>
+      <h2>Tudo que acontece no seu painel, seu advogado de confiança vê no painel dele. Em tempo real. De onde ele estiver.</h2>
+      <p>Você não precisa entregar o celular pra ele ver uma prova ou um processo. O SOSC JUS conecta os dois painéis — o que você registra, ele acompanha; o que se movimenta no seu processo, ele é avisado junto com você.</p>
+      <div class="connect-diagram">
+        <div class="cd-panel">
+          <div class="cd-title">🧑 Seu painel</div>
+          <div class="cd-row accent"></div>
+          <div class="cd-row"></div>
+          <div class="cd-row" style="width:55%;"></div>
+        </div>
+        <div class="cd-link"><div class="line"><span class="pulse"></span></div></div>
+        <div class="cd-panel">
+          <div class="cd-title">⚖️ Painel do advogado</div>
+          <div class="cd-row accent"></div>
+          <div class="cd-row"></div>
+          <div class="cd-row" style="width:55%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FERRAMENTAS ============ -->
+<section id="ferramentas" class="section-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">O que você recebe abrindo o app</div>
+      <h2>Feito pra impressionar já na primeira tela.</h2>
+      <p>Toque em qualquer ferramenta abaixo pra ver ela funcionando de verdade — são telas reais do app, não desenhos.</p>
+    </div>
+    <div class="toolgrid" id="grid-tools"></div>
+    <div class="chiprow">
+      <div class="chip"><b>Sala Chat SOSC</b> — comunicação sigilosa com seu advogado</div>
+      <div class="chip"><b>Registros SOSC</b> — histórico de tudo que você registrou</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 TOQUES — aprofundado ============ -->
+<section class="section-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">A inovação que ninguém mais tem</div>
+      <h2>Três toques. Prova que vale em qualquer lugar.</h2>
+      <p>Numa situação de risco, não dá tempo de pensar. O SOSC JUS foi feito pra funcionar sem você precisar decidir nada.</p>
+    </div>
+
+    <div class="sos-block">
+      <div class="sos-steps">
+        <div class="sos-step">
+          <div class="ss-num">01</div>
+          <div><h4>Toque 3x no botão</h4><p>Áudio, vídeo e localização começam a ser registrados na hora — sem precisar abrir mais nada.</p></div>
+        </div>
+        <div class="sos-step">
+          <div class="ss-num">02</div>
+          <div><h4>Seu advogado é notificado — e ouve ao vivo</h4><p>O advogado de confiança vinculado recebe o aviso na hora e pode acompanhar o áudio e o GPS em tempo real, de onde estiver.</p></div>
+        </div>
+        <div class="sos-step">
+          <div class="ss-num">03</div>
+          <div><h4>Prova selada, na nuvem, criptografada</h4><p>Áudio, vídeo, GPS e relatório final ficam registrados com hash e carimbo de tempo — verificável, seguindo a cadeia de custódia.</p></div>
+        </div>
+        <div class="sos-step">
+          <div class="ss-num">04</div>
+          <div><h4>Acesso remoto, de qualquer lugar</h4><p>Seu advogado já pode agir — sair de casa pra te encontrar, ou começar a trabalhar com a prova em mãos, sem precisar do seu celular.</p></div>
+        </div>
+      </div>
+
+      <div class="sos-demo-stage">
+        <div class="sos-demo" id="sosDemo">
+          <div class="sos-demo-progress">
+            <div class="bar"><i></i></div><div class="bar"><i></i></div><div class="bar"><i></i></div>
+          </div>
+
+          <div class="sos-state s1 active">
+            <img src="images/sosc_button_small.png" alt="Botão SOSC">
+            <div class="sos-caption"><b>Toque 03x para registrar</b><br>áudio · vídeo · localização</div>
+          </div>
+
+          <div class="sos-state s2 full-image">
+            <img src="images/rec_usuario_opt.jpg" alt="Tela real de gravação">
+          </div>
+
+          <div class="sos-state s3">
+            <div class="sos-seal-check">✓</div>
+            <h4>Prova selada</h4>
+            <div class="sos-hash">a3f9…e27c6b1…9d4a</div>
+            <div class="sos-caption" style="margin-top:0;">08/07/2026 · 21:47:03<br>armazenada e verificável</div>
+            <div class="sos-seal-badges">
+              <span>SHA-256</span><span>RFC 3161</span><span>AES-256</span>
+            </div>
+          </div>
+
+          <div class="sos-demo-tap">👆 toque pra ver os 3 momentos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-cta">
+      <span>Uma proteção assim só funciona instalada.</span>
+      <button class="btn-primary" onclick="openStore()">Baixar o app</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELOS DE SEGURANÇA ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Não é só a palavra de alguém</div>
+      <h2>Prova de verdade obedece cadeia de custódia.</h2>
+      <p>Uma filmagem qualquer, num celular qualquer, não vale como prova técnica. O que o SOSC JUS gera segue o mesmo padrão que perícia digital usa.</p>
+    </div>
+    <div class="sealgrid">
+      <div class="seal"><div class="seal-icon">🔐</div><div><h4>SHA-256</h4><p>Cada prova recebe uma impressão digital única — qualquer alteração, por menor que seja, é detectável.</p></div></div>
+      <div class="seal"><div class="seal-icon">🖋️</div><div><h4>ICP-Brasil</h4><p>Assinatura digital com validade jurídica, no padrão oficial da Infraestrutura de Chaves Públicas Brasileira.</p></div></div>
+      <div class="seal"><div class="seal-icon">⏱️</div><div><h4>RFC 3161</h4><p>Carimbo de tempo padrão internacional — prova exatamente quando cada registro foi feito.</p></div></div>
+      <div class="seal"><div class="seal-icon">🛡️</div><div><h4>AES-256-GCM</h4><p>Criptografia de nível militar em cada arquivo, do momento do registro até o armazenamento.</p></div></div>
+      <div class="seal"><div class="seal-icon">⛓️</div><div><h4>Cadeia de Custódia</h4><p>Cada etapa — captura, envio, armazenamento — é registrada e rastreável, do jeito que a perícia exige.</p></div></div>
+      <div class="seal"><div class="seal-icon">☁️</div><div><h4>Nuvem Criptografada</h4><p>Armazenamento redundante, acessível de qualquer lugar, sempre protegido.</p></div></div>
+    </div>
+
+    <div class="section-cta">
+      <span>Prova de verdade. No seu bolso, agora.</span>
+      <button class="btn-primary" onclick="openStore()">Baixar o app</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Sem letra miúda</div>
+      <h2>Simples assim.</h2>
+    </div>
+    <div class="toolgrid">
+      <div class="toolcard" style="cursor:default;">
+        <div class="icon">↓</div>
+        <h3>Baixe o app</h3>
+        <p>Disponível pra iPhone e Android. Cadastro rápido, sem burocracia.</p>
+      </div>
+      <div class="toolcard" style="cursor:default;">
+        <div class="icon">⚡</div>
+        <h3>Ele já mostra a novidade</h3>
+        <p>Na primeira abertura, o app já busca o que existe no seu nome.</p>
+      </div>
+      <div class="toolcard" style="cursor:default;">
+        <div class="icon">🔔</div>
+        <h3>Você é avisado</h3>
+        <p>Prazo, audiência ou mandado novo — a notificação chega antes de virar surpresa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECOSSISTEMA ============ -->
+<section style="text-align:center; padding-bottom:60px;">
+  <div class="wrap">
+    <div class="eyebrow" style="margin:0 auto 20px;"><span class="dot-live"></span> Prova digital + conexão jurídica</div>
+    <h2 style="max-width:680px; margin:0 auto; font-size:clamp(22px,3vw,32px);">Um ecossistema que não deixa nada passar — nem na prova, nem no processo.</h2>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="brand"><img src="images/logo.png" alt="SOSC JUS"> SOSC JUS</div>
+      <div class="storebtns">
+        <button class="storebadge brandcolor" onclick="openStore('ios')">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M16.5 3c.15 1.06-.27 2.11-.9 2.87-.66.8-1.75 1.42-2.8 1.34-.16-1.03.32-2.1.95-2.83C14.44 3.53 15.5 3.03 16.5 3zM20.7 17.2c-.5 1.14-.74 1.65-1.38 2.66-.9 1.4-2.16 3.15-3.72 3.16-1.39.02-1.75-.9-3.63-.9-1.88 0-2.29.88-3.68.92-1.56.05-2.75-1.5-3.65-2.9C2.53 16.9 1.9 13.3 3 10.86c.78-1.75 2.2-2.86 3.75-2.88 1.42-.03 2.76.96 3.63.96.86 0 2.5-1.19 4.21-1.02.72.03 2.74.29 4.04 2.19-.1.07-2.41 1.41-2.38 4.2.03 3.33 2.92 4.44 2.95 4.45-.03.08-.46 1.58-1.5 3.14z"/></svg>
+          App Store
+        </button>
+        <button class="storebadge brandcolor" onclick="openStore('android')">
+          <svg viewBox="0 0 24 24" width="16" height="16">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          Google Play
+        </button>
+      </div>
+    </div>
+    <div class="disclaimer">
+      Em emergência real, ligue 190. O SOSC JUS complementa, não substitui. Documento gerado pelo SOSC JUS pode
+      envolver conteúdo elaborado por IA e revisado pelo advogado responsável — exige conferência humana e não
+      substitui certidão oficial. Consultas em fonte pública oficial, uso conforme LGPD.
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this) closeModal();">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
+    <div class="modal-inner">
+      <div class="modal-shot"><img id="modalImg" src="" alt=""></div>
+      <div class="modal-body">
+        <div class="modal-eyebrow" id="modalEyebrow"></div>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <p class="fallback-note" id="modalNote"></p>
+        <button class="btn-primary" onclick="openStore()">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a1 1 0 011 1v11.59l3.3-3.3a1 1 0 111.4 1.42l-5 5a1 1 0 01-1.4 0l-5-5a1 1 0 111.4-1.42l3.3 3.3V3a1 1 0 011-1zM5 20a1 1 0 011-1h12a1 1 0 110 2H6a1 1 0 01-1-1z"/></svg>
+          Baixar pra ver na prática
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STICKY DOWNLOAD CTA ============ -->
+<div class="stickycta" id="stickyCta">
+  <div class="msg">Curtiu o que viu?<span>O app é seu em menos de 1 minuto.</span></div>
+  <button class="btn-primary" onclick="openStore()" style="padding:12px 18px; font-size:14px;">Baixar</button>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+  const TOOLS_USUARIO = [
+    { icon:'🆘', title:'SOS — Registro de Emergência', tag:'3 toques', img:'images/iphone_home_usuario.png',
+      desc:'Três toques registram áudio, vídeo e localização — prova pronta pra quando for preciso.', note:'Botão vermelho visível na tela inicial (acima).' },
+    { icon:'⚖️', title:'Meus Advogados de Confiança', tag:'Acesso rápido', img:'images/iphone_home_usuario.png',
+      desc:'Guarde o contato dos advogados em quem você confia, prontos pra acionar quando precisar.', note:'Card visível na tela inicial (acima).' },
+    { icon:'👥', title:'Meus Contatos de Confiança', tag:'Rede de apoio', img:'images/iphone_home_usuario.png',
+      desc:'Pessoas que você quer avisar automaticamente numa situação de risco.', note:'Card visível na tela inicial (acima).' },
+    { icon:'📁', title:'Meus Processos', tag:'Lista nacional · notificação espelhada', img:'images/iphone_home_usuario.png',
+      desc:'Acompanhe qualquer processo vinculado ao seu CPF, em qualquer tribunal do Brasil. Toda movimentação nova te avisa — e avisa seu advogado de confiança junto, ao mesmo tempo.' },
+    { icon:'🚨', title:'Alerta de Mandado de Prisão', tag:'Consulta 24 horas · BNMP/CNJ', img:'images/iphone_alerta.png',
+      desc:'Consulte seu CPF — ou o de outra pessoa — na base nacional de mandados de prisão. Ative a verificação contínua, 24 horas por dia.' },
+    { icon:'✅', title:'Alerta contínuo ativado', tag:'Monitoramento 24h automático', img:'images/iphone_alerta_ativado.png',
+      desc:'Ative o acompanhamento e receba aviso automático se um mandado de prisão aparecer no seu nome, a qualquer hora do dia.' },
+  ];
+  buildToolGrid('grid-tools', TOOLS_USUARIO);
+
+  buildTicker('tickerTrack', [
+    {tag:'NOVO', txt:'Processo localizado em seu nome', meta:'TJMG · 13ª Vara Cível'},
+    {tag:'PRAZO', txt:'Prazo detectado', meta:'vence em 5 dias'},
+    {tag:'MANDADO', txt:'Verificação nacional concluída', meta:'nenhuma pendência'},
+    {tag:'AUDIÊNCIA', txt:'Audiência agendada', meta:'25ª Vara Criminal · BH'},
+    {tag:'MOVIMENTO', txt:'Nova movimentação no processo', meta:'publicada há 2h'},
+  ]);
+
+  initPhoneSimulator('phoneSim', [
+    { img:'images/iphone_home_usuario.png', label:'Tela inicial', desc:'processos, advogados e contatos, tudo ali' },
+    { img:'images/iphone_alerta.png', label:'Alerta de Mandado', desc:'consulta nacional na hora' },
+    { img:'images/iphone_alerta_ativado.png', label:'Alerta ativado', desc:'monitoramento contínuo' },
+    { img:'images/sala_chat_opt.jpg', label:'Sala Chat SOSC', desc:'comunicação sigilosa com seu advogado' },
+  ]);
+
+  initSosDemo('sosDemo');
+
+  initScrollEngagement();
+</script>
+</body>
+</html>

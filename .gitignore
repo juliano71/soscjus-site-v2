@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gemini/IDE files
+.gemini/
+.agents/
+
+# Standalone preview files (optional to ignore to save space, uncomment if needed)
+# standalone/
