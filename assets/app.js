@@ -108,7 +108,7 @@ function buildToolGrid(elId, tools){
       <div class="icon">${t.icon}</div>
       <h3>${t.title}</h3>
       <p>${t.desc}</p>
-      <div class="see">Ver na tela real
+      <div class="see">Ver e baixar
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </div>
     </button>
