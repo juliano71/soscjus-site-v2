@@ -9,8 +9,8 @@ Este repositório contém o código da landing page do SOSC JUS, estruturado e p
 - `advogado.html`: Detalhamento das funcionalidades para advogados (prazos, audiências, contratos, etc.).
 - `assets/`: Estilos (`style.css`) e scripts (`app.js`) utilizados pelo site.
 - `images/`: Recursos visuais do aplicativo e imagens da interface.
-- `renders/`: Mockups e capturas de tela das páginas.
-- `standalone/`: Arquivos HTML compilados como standalone (com imagens embutidas em base64) para compartilhamento rápido.
+- `vercel.json`: Configurações de rotas amigáveis (clean URLs) e cabeçalhos de cache para a Vercel.
+
 
 ## Como publicar na Vercel
 

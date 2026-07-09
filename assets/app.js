@@ -1,25 +1,38 @@
 /* SOSC JUS — landing (3 páginas) — script compartilhado */
 
 /* ---------------- detecção de SO + link de loja ---------------- */
-// TODO(Juliano): trocar '#' pelos links reais da App Store / Google Play quando publicados.
-const STORE_LINKS = { ios:'#', android:'#' };
+const STORE_LINKS = {
+  ios: 'https://apps.apple.com/br/app/sosc-jus/id6770715490',
+  android: 'https://play.google.com/store/apps/details?id=br.com.soscriminal.app'
+};
 const ua = navigator.userAgent || '';
-const isIOS = /iPhone|iPad|iPod/i.test(ua);
+const isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Mac/.test(ua) && 'ontouchend' in document);
 const isAndroid = /Android/i.test(ua);
+
+/* dispara Lead no Meta Pixel em toda intenção de download (tráfego pago) */
+function trackLead(store){
+  try { if (window.fbq) fbq('track', 'Lead', { content_name: 'download_' + (store || 'app') }); } catch(e){}
+}
 
 function initNavCta(){
   const navctatext = document.getElementById('navctatext');
-  if (!navctatext) return;
-  if (isIOS){ navctatext.textContent = 'Baixar na App Store'; }
-  else if (isAndroid){ navctatext.textContent = 'Baixar no Google Play'; }
-  else { navctatext.textContent = 'Baixar o app'; }
+  if (navctatext){
+    if (isIOS){ navctatext.textContent = 'Baixar na App Store'; }
+    else if (isAndroid){ navctatext.textContent = 'Baixar no Google Play'; }
+    else { navctatext.textContent = 'Baixar o app'; }
+  }
+  // Preenche todos os selos de loja com o link real e ordena por plataforma
+  document.querySelectorAll('[data-store]').forEach(el=>{
+    const which = el.getAttribute('data-store');
+    el.addEventListener('click', ()=> trackLead(which));
+  });
 }
 
 function openStore(pref){
   const which = pref || (isIOS ? 'ios' : isAndroid ? 'android' : 'ios');
+  trackLead(which);
   const url = STORE_LINKS[which];
-  if (url && url !== '#') window.open(url, '_blank');
-  else alert('Link da loja ainda não configurado neste protótipo — troque STORE_LINKS em assets/app.js.');
+  window.open(url, '_blank', 'noopener');
 }
 
 /* ---------------- ticker (elemento de assinatura) ---------------- */
