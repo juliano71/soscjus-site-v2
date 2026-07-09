@@ -585,7 +585,13 @@ textarea.field{resize:none;min-height:14cqw}
   .route{stroke-dashoffset:0}
 }
 </style>
-<style>html,body{background:transparent !important}#hint{display:none !important}</style>
+<style>
+  html,body{ background:transparent !important; height:100% !important; margin:0 !important; }
+  #hint{ display:none !important; }
+  .stage{ height:100% !important; gap:0 !important; place-items:center !important; padding:0 !important; }
+  /* phone fills the iframe -> status bar + all 5 tabs always visible */
+  .phone{ --pw: min(99vw, calc((100svh - 2px) * .46025)) !important; }
+</style>
 </head>
 <body>
 
